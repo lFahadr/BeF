@@ -47,10 +47,6 @@ const AppScreens: React.FC = () => {
             <h6 className="text-primary-color uppercase text-[16px] md:text-[18px] font-medium mb-[5px]">
               app screens
             </h6>
-            <h2 className="text-[28px] md:text-[36px] leading-[36px] md:leading-[45px]">
-              {/* A great Task Management App is the ability to customize your
-              workflow */}
-            </h2>
           </div>
 
           {screenData && (
@@ -83,6 +79,7 @@ const AppScreens: React.FC = () => {
               }}
               modules={[Autoplay, Pagination]}
               className="tm-app-screens-slider"
+
               data-aos="fade-up"
               data-aos-delay="200"
               data-aos-duration="600"
@@ -91,17 +88,13 @@ const AppScreens: React.FC = () => {
               {screenData &&
                 screenData.map((value, i) => (
                   <SwiperSlide key={i} className="text-center">
-                    <div className="relative inline-block w-[250px] h-[500px] bg-white border-[16px] border-black rounded-[30px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-                      <div className="absolute top-[16px] left-[50%] w-[60px] h-[5px] bg-black rounded-[10px] transform -translate-x-1/2"></div>
-                      <div className="absolute bottom-[16px] left-[50%] w-[50px] h-[50px] bg-black rounded-full transform -translate-x-1/2"></div>
-                      <Image
-                        src={value.image}
-                        alt="Screen"
-                        width={234}
-                        height={480}
-                        className="absolute top-0 left-0 right-0 bottom-0 m-auto"
-                      />
-                    </div>
+                    <Image
+                      src={value.image}
+                      alt="Screen"
+                      width={234}
+                      height={480}
+                      className="inline-block"
+                    />
                   </SwiperSlide>
                 ))}
             </Swiper>
