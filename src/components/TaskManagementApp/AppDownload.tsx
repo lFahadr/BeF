@@ -10,7 +10,7 @@ const AppDownload: React.FC = () => {
     <>
       <div id="download" className="px-[15px] xl:px-[30px]">
         <div
-          className="max-w-[1700px] mx-auto rounded-[20px] py-[40px] md:py-[70px] px-[15px] lg:p-0"
+          className="max-w-[1700px] mx-auto rounded-[20px] py-[40px] md:py-[70px] px-[15px] lg:py-20"
           style={{
             background:
               "linear-gradient(277deg, #19AFFF 17.64%, #0A65FC 76.53%)",
