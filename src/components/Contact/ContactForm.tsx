@@ -32,15 +32,14 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      <div className="py-[50px] md:py-[80px] lg:py-[100px] xl:py-[120px]">
+      <div id="contact" className="py-[50px] md:py-[80px] lg:py-[100px] xl:py-[120px]">
         <div className="container mx-auto">
           <div className="max-w-[650px] mx-auto text-center mb-[30px] md:mb-[40px] lg:mb-[60px]">
             <h6 className="uppercase text-[16px] md:text-[18px] font-medium mb-[5px]">
-              GET IN TOUCH
+            Join BeFresh
             </h6>
             <h2 className="text-[28px] md:text-[36px] leading-[36px] md:leading-[45px]">
-              Your Gateway to Excellence: Contact Us and Unlock a World of
-              Possibilities
+            To increase your traffic and enhance you salon performance join BeFresh Community. Contact us for more information
             </h2>
           </div>
 
@@ -64,30 +63,14 @@ const ContactForm: React.FC = () => {
                     />
 
                     <Input
-                      id="email"
-                      placeholder="Your Email"
+                      id="number"
+                      placeholder="Your Number"
                       register={register}
                       errors={errors}
                       required
-                    />
+                     />
                   </div>
-
-                  <Input
-                    id="subject"
-                    placeholder="Your Subject"
-                    register={register}
-                    errors={errors}
-                    required
-                  />
-
-                  <Input
-                    id="number"
-                    placeholder="Your Number"
-                    register={register}
-                    errors={errors}
-                    required
-                  />
-
+                  
                   <TextArea
                     id="comment"
                     placeholder="Enter Message..."

@@ -10,16 +10,11 @@ import logo from "/public/images/logo.png";
 const navLinkData = [
   {
     id: "1",
-    text: "Features",
-    link: "#features",
-  },
-  {
-    id: "2",
     text: "Privacy Policy",
     link: "/privacy-policy",
   },
   {
-    id: "3",
+    id: "2",
     text: "Contact",
     link: "#contact",
   },
@@ -62,7 +57,7 @@ const Footer: React.FC = () => {
               </Link>
             </div>
 
-            <div id="contact" className="lg:col-span-2 text-center lg:text-end">
+            <div className="lg:col-span-2 text-center lg:text-end">
               {navLinkData && (
                 <ul 
                   className="space-y-[10px] space-x-[30px] md:space-x-[50px] xl:space-x-[80px] 2xl:space-x-[100px] rtl:space-x-reverse"
@@ -95,6 +90,11 @@ const Footer: React.FC = () => {
               data-aos-duration="600"
               data-aos-once="false"
             >
+              <p className="text-[#BFC3E1]">
+                © <span className="text-white">Be-fresh</span>. All Rights Reserved
+                by <span className="text-white">AL-MAJTAMA MATOUR</span>
+              </p>
+
             </div>
 
             <div className="text-center md:text-end">
@@ -106,8 +106,6 @@ const Footer: React.FC = () => {
                 data-aos-duration="600"
                 data-aos-once="false"
               >
-                <p className="text-[#BFC3E1] mt-[10px]">Contact us on email: <a href="mailto:support@be-fresh.app" className="text-white hover:text-primary-color">support@be-fresh.app</a></p>
-                <span className="text-[#BFC3E1]">Catch us on social media</span>
                   {socialLinksData &&
                     socialLinksData.map((value, i) => (
                       <li className="inline-block" key={i}>

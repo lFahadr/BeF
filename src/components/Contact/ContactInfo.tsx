@@ -12,7 +12,7 @@ const ContactInfo = () => {
             <div className="shrink-0 bg-white text-primary-color w-[48px] h-[48px] leading-[50px] text-[25px] inline-block text-center rounded-full">
               <i className="ri-map-pin-line"></i>
             </div>
-            <p>2750 Quadra Street Victoria Road, New York, USA</p>
+            <p>Nasser Al Din Al Tai Street, Alfalah District Riyadh 13314 SA</p>
           </div>
         </div>
 
@@ -26,10 +26,10 @@ const ContactInfo = () => {
             </div>
             <div>
               <a href="tel:1234567898" className="block hover:text-primary-color">
-                (+123) 456-7898
+                (+966) 502649885
               </a>
               <a href="tel:1234567899" className="block hover:text-primary-color">
-                (+123) 456-7899
+                (+966) 530929534
               </a>
             </div>
           </div>
@@ -45,16 +45,10 @@ const ContactInfo = () => {
             </div>
             <div>
               <a
-                href="mailto:support@plama.com"
+                href="mailto:support@be-fresh.app"
                 className="block hover:text-primary-color"
               >
-                support@plama.com
-              </a>
-              <a
-                href="mailto:info@plama.com"
-                className="block hover:text-primary-color"
-              >
-                info@plama.com
+                support@be-fresh.app
               </a>
             </div>
           </div>
