@@ -30,7 +30,7 @@ const AppDownload: React.FC = () => {
                 </h6>
 
                 <h2 className="text-white text-[28px] md:text-[36px] leading-[36px] md:leading-[45px] mb-[20px]">
-                  Let&rsquo;s get Free download From Apple Store
+                  Let&rsquo;s get Free download From Apple and Play Store
                 </h2>
 
                 <p className="text-white">
@@ -43,7 +43,7 @@ const AppDownload: React.FC = () => {
 
                 <div className="mt-[30px] md:mt-[50px] space-x-[15px] md:space-x-[30px] rtl:space-x-reverse space-y-[15px] sm:space-y-[0]">
                   <a
-                    href="https://apps.apple.com/us/app/befresh-sa/id6474939840"
+                    href="http://site.be-fresh.app/befresh"
                     target="_blank"
                     className="inline-block"
                   >
@@ -59,7 +59,23 @@ const AppDownload: React.FC = () => {
                       </div>
                     </div>
                   </a>
-
+                  <a
+                    href="http://site.be-fresh.app/befresh"
+                    target="_blank"
+                    className="inline-block"
+                  >
+                    <div className="flex items-center space-x-[10px] rtl:space-x-reverse bg-[#fff] py-[10px] px-[34px] rounded-full transition duration-500 ease-in-out hover:bg-[#f9e3e3]">
+                      <i className="flaticon-play-store text-[28px]"></i>
+                      <div>
+                        <p className="text-[12px] leading-none mb-[6px]">
+                          available on
+                        </p>
+                        <h4 className="text-[15px] font-medium leading-none">
+                          Google Play
+                        </h4>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               </div>
 

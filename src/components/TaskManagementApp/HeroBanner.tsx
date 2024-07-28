@@ -48,7 +48,7 @@ const HeroBanner: React.FC = () => {
                   href="#download"
                   className="py-[15px] px-[30px] inline-block rounded-[6px] bg-primary-color text-white font-semibold text-[16px] md:text-[18px] transition duration-500 ease-in-out hover:bg-black-color"
                 >
-                  Start Free Trial
+                  Download App
                 </Link>
               </div>
 

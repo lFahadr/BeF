@@ -53,7 +53,20 @@ const KeyFeatures: React.FC = () => {
     <>
       <div id="features" className="bg-[#F9F3EF] py-[50px] md:py-[80px] lg:py-[100px] xl:py-[120px]">
         <div className="container">
-          
+        <div 
+            className="max-w-[650px] mx-auto text-center mb-[30px] md:mb-[40px] lg:mb-[60px]"
+            data-aos="fade-up"
+            data-aos-delay='100'
+            data-aos-duration="600"
+            data-aos-once="false"
+          >
+            <h6 className="text-primary-color uppercase text-[16px] md:text-[18px] font-medium mb-[5px]">
+              Key Features
+            </h6>
+            <h2 className="text-[28px] md:text-[36px] leading-[36px] md:leading-[45px]">
+              A great booking solution to skip the waiting line
+            </h2>
+          </div>
           {featuresData && (
             <div className="grid gap-[25px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {featuresData &&

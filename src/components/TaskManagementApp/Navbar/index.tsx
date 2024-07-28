@@ -103,17 +103,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 </li>
               </ul>
-
-              {/* Other options */}
-              <div className="other-options self-center space-x-[20px] lg:space-x-[25px] xl:space-x-[45px] rtl:space-x-reverse">
-
-                <Link
-                  href="#download"
-                  className="py-[10px] md:py-[8px] lg:py-[12px] xl:py-[15px] px-[20px] md:px-[15px] lg:px-[20px] xl:px-[30px] inline-block rounded-[6px] bg-[#061257] text-white font-semibold text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] transition duration-500 ease-in-out hover:bg-primary-color"
-                >
-                  Get Started Free
-                </Link>
-              </div>
+              
             </div>
           </nav>
         </div>
