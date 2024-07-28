@@ -42,7 +42,7 @@ const socialLinksData = [
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="bg-[#080D27] py-[50px] md:py-[80px] lg:py-[100px] xl:py-[120px]">
+      <footer className="bg-[#080D27] py-[50px] md:py-[80px] lg:py-[100px] xl:py-[60px]">
         <div className="container">
           <div className="grid gap-[20px] items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
             <div 
@@ -52,9 +52,7 @@ const Footer: React.FC = () => {
               data-aos-duration="600"
               data-aos-once="false"
             >
-              <Link href="/">
-                <Image src={logo} alt="logo" className="inline-block" />
-              </Link>
+                <Image src={logo} alt="logo" className="inline-block w-16 h-16" />
             </div>
 
             <div className="lg:col-span-2 text-center lg:text-end">
