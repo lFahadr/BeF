@@ -81,29 +81,16 @@ const Footer: React.FC = () => {
           <hr className="border-[#384179] my-[30px] md:my-[50px]" />
 
           <div className="grid gap-[15px] items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-            <div 
-              className="text-center md:text-start"
-              data-aos="fade-in"
-              data-aos-delay="300"
-              data-aos-duration="600"
-              data-aos-once="false"
-            >
+            <div className="text-center md:text-start">
               <p className="text-[#BFC3E1]">
                 © <span className="text-white">Be-fresh</span>. All Rights Reserved
                 by <span className="text-white">AL-MAJTAMA MATOUR</span>
               </p>
-
             </div>
 
             <div className="text-center md:text-end">
               {socialLinksData && (
-                <div 
-                className="space-x-[10px] rtl:space-x-reverse"
-                data-aos="fade-in"
-                data-aos-delay="300"
-                data-aos-duration="600"
-                data-aos-once="false"
-              >
+                <div className="space-x-[10px] rtl:space-x-reverse" >
                   {socialLinksData &&
                     socialLinksData.map((value, i) => (
                       <li className="inline-block" key={i}>

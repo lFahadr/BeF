@@ -51,14 +51,12 @@ const Navbar: React.FC = () => {
               isActive ? "active" : ""
             }`}
           >
-            <div className="self-center">
-              <Link href="/">
+            <div className="self-center bg-[#202020] rounded-[4px] px-[6px] py-[3px] inline-block">
                 <Image 
                   src={logo} 
-                  className="inline md:max-w-[110px] lg:max-w-[140px]" 
+                  className="w-14 h-14 object-cover" 
                   alt="logo" 
                 />
-              </Link>
             </div>
 
             {/* Toggle button */}
