@@ -6,16 +6,41 @@ import { usePathname } from "next/navigation";
 import NavPages from "./NavPages";
 import Image from "next/image";
 
+
 import logo from "/public/images/logo.png";
+import { useTranslations, useLocale } from "next-intl";
 
 const Navbar: React.FC = () => {
   const currentRoute = usePathname();
+  const t = useTranslations('home');
+  const locale = useLocale();
+  
+
+  // Use effect to read the user preference from local storage on component mount
+  useEffect(() => {
+    document.documentElement.setAttribute('dir', locale == 'ar' ? 'rtl' : 'ltr');
+  }, [locale]);
+
+
+  const changeLanguage = () => {
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+
+    if (currentPath.includes('/en')) {
+      newPath = currentPath.replace('/en', '/ar');
+    } else if (currentPath.includes('/ar')) {
+      newPath = currentPath.replace('/ar', '/en');
+    }
+
+    window.location.href = newPath;
+    window.location.href = newPath;
+  }
 
   // Sticky Navbar
   useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
-      if (window.scrollY > 170) {
+      if (window.scrollY > 120) {
         elementId?.classList.add("isSticky");
       } else {
         elementId?.classList.remove("isSticky");
@@ -24,7 +49,7 @@ const Navbar: React.FC = () => {
 
     return () => {
       document.removeEventListener("scroll", () => {
-        if (window.scrollY > 170) {
+        if (window.scrollY > 120) {
           elementId?.classList.add("isSticky");
         } else {
           elementId?.classList.remove("isSticky");
@@ -78,7 +103,7 @@ const Navbar: React.FC = () => {
                     href="#home"
                     className="text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color"
                   >
-                    Home
+                    {t('title')}
                   </Link>
                 </li>
 
@@ -87,8 +112,8 @@ const Navbar: React.FC = () => {
                     href="#features"
                     className="text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color"
                   >
-                    About
-                  </Link>
+                    {t('about')}
+                    </Link>
                 </li>
 
                 <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
@@ -98,8 +123,16 @@ const Navbar: React.FC = () => {
                       currentRoute === "/contact/" ? "text-primary-color" : ""
                     }`}
                   >
-                    Contact
-                  </Link>
+                    {t('contact')}
+                    </Link>
+                </li>
+                <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
+                  <div
+                    className={`text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color cursor-pointer`}
+                    onClick={() => changeLanguage()}
+                  >
+                    E | ع
+                  </div>
                 </li>
               </ul>
               

@@ -21,6 +21,7 @@
     "eslint-config-next": "^14.0.0",
     "fslightbox-react": "^1.7.6",
     "next": "^14.0.4",
+    "next-intl": "^3.17.2",
     "postcss": "8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
