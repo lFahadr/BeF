@@ -46,7 +46,7 @@ const PageBannerTitle: React.FC<PageBannerTitleProps> = ({
       <Image
         src={shapeImg1}
         alt="shape"
-        className="absolute bottom-0 left-0 rtl:right-0 max-w-[70px] md:max-w-[150px] xl:max-w-[200px] animate-pulse"
+        className="absolute bottom-0 left-0 max-w-[70px] md:max-w-[150px] xl:max-w-[200px] animate-pulse"
       />
       <Image
         src={shapeImg2}

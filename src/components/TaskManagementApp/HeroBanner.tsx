@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import heroBanner1 from "/public/images/expense-tracker-app/hero-banner1.png";
 import bannerVector from "/public/images/expense-tracker-app/banner-vector.png";
 import { useTranslations } from "next-intl";
 import {useLocale} from 'next-intl';
@@ -12,7 +11,8 @@ import {useLocale} from 'next-intl';
 
 const HeroBanner: React.FC = () => {
   const t = useTranslations("home");
-  const dir = useLocale() === 'ar' ? 'rtl' : 'ltr';
+  const isRtl = useLocale() === 'ar' ? true : false;
+  const heroBanner1 = isRtl ? "/images/expense-tracker-app/hero-banner1A.png" : "/images/expense-tracker-app/hero-banner1.png";
   return (
     <>
       <div
@@ -77,7 +77,7 @@ const HeroBanner: React.FC = () => {
               data-aos-duration="600"
               data-aos-once="true"
             >
-              <Image src={heroBanner1} alt="Hero Banner" />
+              <Image src={heroBanner1} alt="Hero Banner" width={3337} height={3337}/>
             </div>
           </div>
         </div>

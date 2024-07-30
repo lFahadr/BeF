@@ -30,11 +30,49 @@
         "phoneNumber":"Phone Number",
         "emailUs" : "Email Us",
         "privacyPolicy":"Privacy Policy",
-        "allRight":": All Rights Reserved By",
+        "allRight":": All Rights Reserved By ",
         "companyName":"Establishment AL-MAJTAMA MATOUR For Information Technology",
         "yourName":"Your Name",
         "yourNumber":"Your Number",
         "enterMessage":"Enter Message",
-        "sendYourMessage":"Send Your Message"
+        "sendYourMessage":"Send Your Message",
+        "address": "4180, Nasr Al-Din Al-Tayy, 6185, Al-Falaj District, Riyadh 13314",
+        "primaryPhoneNumber": "(+966) 502649885",
+        "secondaryPhoneNumber": "(+966) 530929534",
+        "submittedSuccessfully": "Thank you for reaching out to us! We will get back to you shortly.",
+        "submitError": "An error occurred. Please try again later.",
+        "phoneNumberError": "Please enter a valid phone number. Example: 05XXXXXXXX",
+        "nameError": "Please enter name longer than 3 characters"
+    },
+    "privacyPolicy" : {
+        "termsAndConditions": "Terms & Conditions",
+        "privacyPolicy": "Privacy Policy",
+        "privacyRule1Text": "Information We Collect",
+        "privacyRule1SubText":
+          "We may collect personal information such as names, contact details, and booking history to provide efficient grooming services. This information is securely stored and used solely for the purpose of enhancing your grooming experience.",
+        "privacyRule2Text": "How We Use Your Information",
+        "privacyRule2SubText":
+          "Your data is utilized for appointment scheduling, personalized service delivery, and communication. We prioritize the confidentiality and security of your information, and we do not share it with third parties without your explicit consent.",
+        "privacyRule3Text": "Data Security",
+        "privacyRule3SubText":
+          "We employ industry-standard security measures to protect your data from unauthorized access, disclosure, alteration, and destruction. Your privacy is of utmost importance to us.",
+        "privacyRule4Text": "Cookie Policy",
+        "privacyRule4SubText":
+          "Our website uses cookies to enhance your browsing experience. By continuing to use our site, you consent to the use of cookies in accordance with our privacy policy.",
+        "termsRule1Text": "Booking and App Usage",
+        "termsRule1SubText":
+          "By using our booking system and mobile applications, you agree to provide accurate information for appointments. Any misuse or unauthorized access to the system is strictly prohibited.",
+        "termsRule2Text": "Cancellation and Rescheduling",
+        "termsRule2SubText":
+          "Clients may cancel or reschedule appointments within a reasonable time frame. Late cancellations or no-shows may be subject to a fee.",
+        "termsRule3Text": "Service Liability",
+        "termsRule3SubText":
+          "While we strive for excellence in every grooming service, we cannot guarantee specific outcomes. Results may vary based on individual preferences and hair types.",
+        "termsRule4Text": "Intellectual Property",
+        "termsRule4SubText":
+          "All content on our website, including logos, images, and text, is the intellectual property of BeFresh. Unauthorized use or reproduction is strictly prohibited.",
+        "termsRule5Text": "Changes to Terms and Policies",
+        "termsRule5SubText":
+          "We reserve the right to update our Terms and Conditions and Privacy Policy at any time. Continued use of our services implies acceptance of these changes."
     }
 }

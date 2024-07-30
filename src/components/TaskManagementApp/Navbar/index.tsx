@@ -6,41 +6,42 @@ import { usePathname } from "next/navigation";
 import NavPages from "./NavPages";
 import Image from "next/image";
 
-
 import logo from "/public/images/logo.png";
 import { useTranslations, useLocale } from "next-intl";
 
 const Navbar: React.FC = () => {
   const currentRoute = usePathname();
-  const t = useTranslations('home');
+  const t = useTranslations("home");
   const locale = useLocale();
-  
+  const isRoot = currentRoute === "/en/" || currentRoute === "/ar/";
 
   // Use effect to read the user preference from local storage on component mount
   useEffect(() => {
-    document.documentElement.setAttribute('dir', locale == 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute(
+      "dir",
+      locale == "ar" ? "rtl" : "ltr"
+    );
   }, [locale]);
-
 
   const changeLanguage = () => {
     const currentPath = window.location.pathname;
     let newPath = currentPath;
 
-    if (currentPath.includes('/en')) {
-      newPath = currentPath.replace('/en', '/ar');
-    } else if (currentPath.includes('/ar')) {
-      newPath = currentPath.replace('/ar', '/en');
+    if (currentPath.includes("/en")) {
+      newPath = currentPath.replace("/en", "/ar");
+    } else if (currentPath.includes("/ar")) {
+      newPath = currentPath.replace("/ar", "/en");
     }
 
     window.location.href = newPath;
     window.location.href = newPath;
-  }
+  };
 
   // Sticky Navbar
   useEffect(() => {
     let elementId = document.getElementById("navbar");
     document.addEventListener("scroll", () => {
-      if (window.scrollY > 120) {
+      if (window.scrollY > 80) {
         elementId?.classList.add("isSticky");
       } else {
         elementId?.classList.remove("isSticky");
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
 
     return () => {
       document.removeEventListener("scroll", () => {
-        if (window.scrollY > 120) {
+        if (window.scrollY > 80) {
           elementId?.classList.add("isSticky");
         } else {
           elementId?.classList.remove("isSticky");
@@ -77,12 +78,7 @@ const Navbar: React.FC = () => {
             }`}
           >
             <div className="self-center bg-[#202020] rounded-[4px] px-[6px] py-[3px] inline-block">
-                <Image 
-                  src={logo} 
-                  className="w-14 h-14 object-cover" 
-                  alt="logo" 
-                  
-                />
+              <Image src={logo} className="w-14 h-14 object-cover" alt="logo" />
             </div>
 
             {/* Toggle button */}
@@ -100,31 +96,31 @@ const Navbar: React.FC = () => {
               <ul className="navbar-nav self-center flex-row ml-auto rtl:ml-0 rtl:mr-auto md:flex md:space-x-[15px] lg:space-x-[25px] xl:space-x-[35px] 2xl:space-x-[50px] rtl:space-x-reverse">
                 <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
                   <Link
-                    href="#home"
+                    href={isRoot ? "#home" : "/#home"}
                     className="text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color"
                   >
-                    {t('title')}
+                    {t("title")}
                   </Link>
                 </li>
 
                 <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
                   <Link
-                    href="#features"
+                    href={isRoot ? "#features" : "/#features"}
                     className="text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color"
                   >
-                    {t('about')}
-                    </Link>
+                    {t("about")}
+                  </Link>
                 </li>
 
                 <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
                   <Link
-                    href="#contact"
+                    href={isRoot ? "#contact" : "/#contact"}
                     className={`text-[16px] md:text-[16px] lg:text-[18px] font-medium transition-all hover:text-primary-color ${
                       currentRoute === "/contact/" ? "text-primary-color" : ""
                     }`}
                   >
-                    {t('contact')}
-                    </Link>
+                    {t("contact")}
+                  </Link>
                 </li>
                 <li className="py-[8px] lg:py-[15px] xl:py-[35px] 2xl:py-[38px] relative group">
                   <div
@@ -135,7 +131,6 @@ const Navbar: React.FC = () => {
                   </div>
                 </li>
               </ul>
-              
             </div>
           </nav>
         </div>

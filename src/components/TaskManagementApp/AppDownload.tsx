@@ -2,12 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
-import appDownloadImg from "/public/images/task-management-app/app-download.png";
 
 const AppDownload: React.FC = () => {
   const t = useTranslations("home");
+  const isRtl = useLocale() === 'ar' ? true : false;
+  const appDownloadImage = isRtl ? "/images/task-management-app/app-downloadA.png" : "/images/task-management-app/app-download.png";
 
   return (
     <>
@@ -42,7 +43,7 @@ const AppDownload: React.FC = () => {
 
                 <div className="mt-[30px] md:mt-[50px] space-x-[15px] md:space-x-[30px] rtl:space-x-reverse space-y-[15px] sm:space-y-[0]">
                   <a
-                    href="http://site.be-fresh.app/befresh"
+                    href="https://apps.apple.com/sa/app/befresh-sa/id6474939840"
                     target="_blank"
                     className="inline-block"
                   >
@@ -59,7 +60,7 @@ const AppDownload: React.FC = () => {
                     </div>
                   </a>
                   <a
-                    href="http://site.be-fresh.app/befresh"
+                    href="https://play.google.com/store/apps/details?id=com.befresh&hl=ar&gl=US"
                     target="_blank"
                     className="inline-block"
                   >
@@ -86,7 +87,9 @@ const AppDownload: React.FC = () => {
                 data-aos-once="false"
               >
                 <Image
-                  src={appDownloadImg}
+                  src={appDownloadImage}
+                  width={500}
+                  height={500}
                   alt="App Download"
                   className="inline-block lg:scale-[1.2]"
                 />

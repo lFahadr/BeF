@@ -11,6 +11,7 @@ interface InputProps {
 	required?: boolean;
 	register: UseFormRegister<FieldValues>;
 	errors: FieldErrors;
+  validate?: (value: any) => boolean | string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -22,15 +23,16 @@ const Input: React.FC<InputProps> = ({
 	register,
 	required,
 	errors,
-}) => {
+  validate,
+}) => {  
   return (
-    <>
+    <div>
       <input
         id={id}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
-				{...register(id, { required })}
+				{...register(id, { required, validate })}
         className={`
           bg-white 
           rounded-[6px]
@@ -46,9 +48,15 @@ const Input: React.FC<InputProps> = ({
          
           ${errors[id] ? "border-rose-500" : "border-[#82839E]"}
           ${ errors[id] ? "focus:border-rose-500" : "focus:outline-none"}
+          mb-2
         `}
       />
-    </>
+      {
+        errors[id] && (
+          <span className="text-rose-500">{errors[id]?.message?.toString()}</span>
+        )
+      }
+    </div>
   )
 }
 

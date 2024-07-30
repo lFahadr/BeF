@@ -17,7 +17,7 @@ const ContactInfo: React.FC = () => {
             <div className="shrink-0 bg-white text-primary-color w-[48px] h-[48px] leading-[50px] text-[25px] inline-block text-center rounded-full">
               <i className="ri-map-pin-line"></i>
             </div>
-            <p>Nasser Al Din Al Tai Street, Alfalah District Riyadh 13314 SA</p>
+            <p>{t('address')}</p>
           </div>
         </div>
 
@@ -30,11 +30,11 @@ const ContactInfo: React.FC = () => {
               <i className="ri-phone-line"></i>
             </div>
             <div>
-              <a href="tel:1234567898" className="block hover:text-primary-color">
-                (+966) 502649885
+              <a href="tel:0502649885" className="block hover:text-primary-color">
+                {t("primaryPhoneNumber")}
               </a>
-              <a href="tel:1234567899" className="block hover:text-primary-color">
-                (+966) 530929534
+              <a href="tel:0530929534" className="block hover:text-primary-color">
+              {t("secondaryPhoneNumber")}
               </a>
             </div>
           </div>
@@ -51,7 +51,7 @@ const ContactInfo: React.FC = () => {
             <div>
               <a
                 href="mailto:support@be-fresh.app"
-                className="block hover:text-primary-color"
+                className="block hover:text-primary-color text-[14px]"
               >
                 support@be-fresh.app
               </a>

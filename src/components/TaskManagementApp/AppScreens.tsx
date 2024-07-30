@@ -4,37 +4,38 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-
-const screenData = [
-  {
-    id: "1",
-    image: "/images/task-management-app/screen1.png", // Recommended image size 234x480
-  },
-  {
-    id: "2",
-    image: "/images/task-management-app/screen2.png", // Recommended image size 234x480
-  },
-  {
-    id: "3",
-    image: "/images/task-management-app/screen3.png", // Recommended image size 234x480
-  },
-  {
-    id: "4",
-    image: "/images/task-management-app/screen4.png", // Recommended image size 234x480
-  },
-  {
-    id: "5",
-    image: "/images/task-management-app/screen5.png", // Recommended image size 234x480
-  },
-  {
-    id: "6",
-    image: "/images/task-management-app/screen6.png", // Recommended image size 234x480
-  },
-];
+import { useLocale, useTranslations } from "next-intl";
 
 const AppScreens: React.FC = () => {
   const t = useTranslations("home");
+  const isRtl = useLocale() === 'ar' ? true : false;
+
+  const screenData = [
+    {
+      id: "1",
+      image: `/images/task-management-app/screen1${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+    {
+      id: "2",
+      image: `/images/task-management-app/screen2${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+    {
+      id: "3",
+      image: `/images/task-management-app/screen3${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+    {
+      id: "4",
+      image: `/images/task-management-app/screen4${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+    {
+      id: "5",
+      image: `/images/task-management-app/screen5${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+    {
+      id: "6",
+      image: `/images/task-management-app/screen6${isRtl ? 'A' : ''}.png`, // Recommended image size 234x480
+    },
+  ];
 
   return (
     <>
@@ -90,7 +91,7 @@ const AppScreens: React.FC = () => {
             >
               {screenData &&
                 screenData.map((value, i) => (
-                  <SwiperSlide key={i} className="text-center">
+                  <SwiperSlide key={i} className="text-center rtl:!mr-0">
                     <Image
                       src={value.image}
                       alt="Screen"
