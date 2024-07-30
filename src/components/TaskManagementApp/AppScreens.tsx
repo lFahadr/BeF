@@ -4,6 +4,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const screenData = [
   {
@@ -33,6 +34,8 @@ const screenData = [
 ];
 
 const AppScreens: React.FC = () => {
+  const t = useTranslations("home");
+
   return (
     <>
       <div id="screens" className="pt-[50px] md:pt-[80px] lg:pt-[100px] xl:pt-[120px] relative before:content-[''] before:bg-[#F9F3EF] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[35%]">
@@ -45,7 +48,7 @@ const AppScreens: React.FC = () => {
             data-aos-once="false"
           >
             <h6 className="text-primary-color uppercase text-[16px] md:text-[18px] font-medium mb-[5px]">
-              app screens
+              {t("appScreens")}
             </h6>
           </div>
 

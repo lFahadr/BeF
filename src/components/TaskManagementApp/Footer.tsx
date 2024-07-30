@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import logo from "/public/images/logo.png";
 
@@ -10,12 +11,12 @@ import logo from "/public/images/logo.png";
 const navLinkData = [
   {
     id: "1",
-    text: "Privacy Policy",
+    text: "privacyPolicy",
     link: "/privacy-policy",
   },
   {
     id: "2",
-    text: "Contact",
+    text: "contact",
     link: "#contact",
   },
 ];
@@ -40,6 +41,8 @@ const socialLinksData = [
 ];
 
 const Footer: React.FC = () => {
+  const t = useTranslations("home");
+
   return (
     <>
       <footer className="bg-[#080D27] py-[50px] md:py-[80px] lg:py-[100px] xl:py-[60px]">
@@ -70,7 +73,7 @@ const Footer: React.FC = () => {
                         className="inline-block font-semibold text-[#BFC3E1] hover:text-primary-color"
                         key={i}
                       >
-                        <Link href={value.link}>{value.text}</Link>
+                        <Link href={value.link}>{t(value.text)}</Link>
                       </li>
                     ))}
                 </ul>
@@ -83,10 +86,10 @@ const Footer: React.FC = () => {
           <div className="grid gap-[15px] items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <div className="text-center md:text-start">
               <p className="text-[#BFC3E1]">
-                © <span className="text-white">Be-fresh</span>. All Rights Reserved
-                by <span className="text-white">AL-MAJTAMA MATOUR</span>
+                © <span className="text-white">Be-fresh</span>. {t('allRight')} 
+                <span className="text-white">{t('companyName')}</span>
               </p>
-            </div>
+          </div>
 
             <div className="text-center md:text-end">
               {socialLinksData && (

@@ -7,8 +7,11 @@ import Input from "../FormHelpers/Input";
 import TextArea from "../FormHelpers/TextArea";
 import Button from "../FormHelpers/Button";
 import ContactInfo from "./ContactInfo";
+import { useTranslations } from "next-intl";
 
 const ContactForm: React.FC = () => {
+  const t = useTranslations("home");
+
   const {
     register,
     handleSubmit,
@@ -17,8 +20,6 @@ const ContactForm: React.FC = () => {
   } = useForm<FieldValues>({
     defaultValues: {
       name: "",
-      email: "",
-      subject: "",
       number: "",
       comment: "",
     },
@@ -36,10 +37,10 @@ const ContactForm: React.FC = () => {
         <div className="container mx-auto">
           <div className="max-w-[650px] mx-auto text-center mb-[30px] md:mb-[40px] lg:mb-[60px]">
             <h6 className="uppercase text-[16px] md:text-[18px] font-medium mb-[5px]">
-            Join BeFresh
+              {t("joinBefresh")}
             </h6>
             <h2 className="text-[28px] md:text-[36px] leading-[36px] md:leading-[45px]">
-            To increase your traffic and enhance you salon performance join BeFresh Community. Contact us for more information
+              {t("joinBefreshText")}
             </h2>
           </div>
 
@@ -56,7 +57,7 @@ const ContactForm: React.FC = () => {
                   <div className="grid gap-[25px] grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                     <Input
                       id="name"
-                      placeholder="Your Name"
+                      placeholder={t("yourName")}
                       register={register}
                       errors={errors}
                       required
@@ -64,7 +65,7 @@ const ContactForm: React.FC = () => {
 
                     <Input
                       id="number"
-                      placeholder="Your Number"
+                      placeholder={t("yourNumber")}
                       register={register}
                       errors={errors}
                       required
@@ -73,7 +74,7 @@ const ContactForm: React.FC = () => {
                   
                   <TextArea
                     id="comment"
-                    placeholder="Enter Message..."
+                    placeholder={t("enterMessage")}
                     register={register}
                     errors={errors}
                     required
@@ -81,7 +82,7 @@ const ContactForm: React.FC = () => {
 
                   <div className="text-center">
                     <Button
-                      label="Send Your Message"
+                      label={t("sendYourMessage")}
                       classAtts="py-[15px] px-[30px] inline-block rounded-[6px] bg-primary-color text-white font-semibold text-[16px] md:text-[18px] transition duration-500 ease-in-out hover:bg-black-color"
                     />
                   </div>

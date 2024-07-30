@@ -31,6 +31,10 @@
         "emailUs" : "Email Us",
         "privacyPolicy":"Privacy Policy",
         "allRight":": All Rights Reserved By",
-        "companyName":"Establishment AL-MAJTAMA MATOUR For Information Technology"
+        "companyName":"Establishment AL-MAJTAMA MATOUR For Information Technology",
+        "yourName":"Your Name",
+        "yourNumber":"Your Number",
+        "enterMessage":"Enter Message",
+        "sendYourMessage":"Send Your Message"
     }
 }
