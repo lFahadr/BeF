@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-
+import { usePathname } from "next/navigation";
 import logo from "/public/images/logo.png";
 
 // navLinkData
@@ -17,7 +17,7 @@ const navLinkData = [
   {
     id: "2",
     text: "contact",
-    link: "#contact",
+    link: "/#contact",
   },
 ];
 
@@ -42,31 +42,18 @@ const socialLinksData = [
 
 const Footer: React.FC = () => {
   const t = useTranslations("home");
+  const currentRoute = usePathname();
+  const isRoot = currentRoute === "/en/" || currentRoute === "/ar/";
 
   return (
     <>
       <footer className="bg-[#080D27] py-[50px] md:py-[80px] lg:py-[100px] xl:py-[60px]">
         <div className="container">
           <div className="grid gap-[20px] items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-            <div 
-              className="text-center lg:text-start"
-              data-aos="fade-in"
-              data-aos-delay="100"
-              data-aos-duration="600"
-              data-aos-once="false"
-            >
-                <Image src={logo} alt="logo" className="inline-block w-16 h-16" />
-            </div>
-
+            <Image src={logo} alt="logo" className="inline-block w-16 h-16" />
             <div className="lg:col-span-2 text-center lg:text-end">
               {navLinkData && (
-                <ul 
-                  className="space-y-[10px] space-x-[30px] md:space-x-[50px] xl:space-x-[80px] 2xl:space-x-[100px] rtl:space-x-reverse"
-                  data-aos="fade-in"
-                  data-aos-delay="200"
-                  data-aos-duration="600"
-                  data-aos-once="false"
-                >
+                <ul className="space-y-[10px] space-x-[30px] md:space-x-[50px] xl:space-x-[80px] 2xl:space-x-[100px] rtl:space-x-reverse">
                   {navLinkData &&
                     navLinkData.map((value, i) => (
                       <li
@@ -86,14 +73,14 @@ const Footer: React.FC = () => {
           <div className="grid gap-[15px] items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <div className="text-center md:text-start">
               <p className="text-[#BFC3E1]">
-                © <span className="text-white">Be-fresh</span>. {t('allRight')} 
-                <span className="text-white">{t('companyName')}</span>
+                © <span className="text-white">Be-fresh</span>. {t("allRight")}
+                <span className="text-white"> {t("companyName")}</span>
               </p>
-          </div>
+            </div>
 
             <div className="text-center md:text-end">
               {socialLinksData && (
-                <div className="space-x-[10px] rtl:space-x-reverse" >
+                <div className="space-x-[10px] rtl:space-x-reverse">
                   {socialLinksData &&
                     socialLinksData.map((value, i) => (
                       <li className="inline-block" key={i}>
@@ -117,9 +104,9 @@ const Footer: React.FC = () => {
                         >
                           <i className={value.icon}></i>
                         </a>
-                      </li>     
+                      </li>
                     ))}
-                </div>         
+                </div>
               )}
             </div>
           </div>
